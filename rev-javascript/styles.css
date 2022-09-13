@@ -1,0 +1,19 @@
+.page{
+  background-color: #F0F2F5;
+}
+.header{
+  background-color: #22238F;
+}
+.title{
+  color:#fff;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 75px;
+  text-align: left;
+}
+.container{
+  padding:40px;
+  border: 1px solid #ddd;
+}
