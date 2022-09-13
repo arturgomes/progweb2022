@@ -24,7 +24,10 @@ const Card: React.FC = ({ user }: CardInterface) => {
           </div>
           <div className="address_container">
             <MdPhone size={30} />
-            <div className="address">{user.phone}</div>
+            <div className="address">
+              {/* <a href={`https://api.whatsapp.com/send?phone=${5567999991234}&text=&source=&data=&app_absent=`}>{user.phone}</a> */}
+              {user.phone}
+            </div>
           </div>
         </div>
       </div>

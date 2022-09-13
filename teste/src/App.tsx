@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Card from './Components/Card'
+import CardList from './Components/CardList'
 // yarn add axios
 const usuario = {
   name: "Artur",
@@ -17,7 +18,8 @@ function App() {
 
   return (
     <>
-      <Card user={usuario} />
+      {/* <Card user={usuario} /> */}
+      <CardList />
     </>
   )
 }
