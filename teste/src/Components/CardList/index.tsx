@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import Card from '../Card';
-
+import IconBusca from '../../assets/icon-busca.png'
 import './styles.css';
 
 const CardList: React.FC = () => {
@@ -27,13 +27,22 @@ const CardList: React.FC = () => {
   }
   function displayContact() {
     if (filter) {
-      return users
+      let res = users
         .filter((user: any) =>
           user.name.toLowerCase()
             .includes(filter.toLowerCase()) ||
+          user.email.toLowerCase()
+            .includes(filter.toLowerCase()) ||
+          user.phone.toLowerCase()
+            .includes(filter.toLowerCase()) ||
           user.address.city.toLowerCase()
             .includes(filter.toLowerCase())
-        ).map(usuario => <Card user={usuario} />)
+          // ).map(usuario => <Card user={usuario} />)
+        ).map(usuario => <div className="result">{usuario.name}</div>)
+      return (<>
+
+        <div className="result_container">{res}</div>
+      </>)
     }
     else {
       return users.map(usuario => <Card user={usuario} />)
@@ -44,7 +53,14 @@ const CardList: React.FC = () => {
     return <div>Carregando..</div>
   } else {
     return (<div className="card_list_container">
-      <input type="text" value={filter} onChange={handleSearchText} />
+      <div className="search_bar">
+        <input
+          type="text"
+          value={filter}
+          onChange={handleSearchText}
+          placeholder="Buscar usuário..." />
+        <img src={IconBusca} alt="Busca" />
+      </div>
       {displayContact()}
     </div>);
   }
