@@ -38,10 +38,10 @@ const CardList: React.FC = () => {
           user.address.city.toLowerCase()
             .includes(filter.toLowerCase())
           // ).map(usuario => <Card user={usuario} />)
-        ).map(usuario => <div className="result">{usuario.name}</div>)
+        ).map(usuario => <Card user={usuario} />)
       return (<>
-
-        <div className="result_container">{res}</div>
+        <span className="span_result">{res.length} resultados encontrados</span>
+        {res}
       </>)
     }
     else {
