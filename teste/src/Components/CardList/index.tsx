@@ -25,6 +25,9 @@ const CardList: React.FC = () => {
     console.log(event.target.value)
     setFilter(event.target.value)
   }
+  function handleDelete(id: string) {
+    setUsers(users => users.filter((user: any) => user.id !== id))
+  }
   function displayContact() {
     if (filter) {
       let res = users
@@ -38,14 +41,14 @@ const CardList: React.FC = () => {
           user.address.city.toLowerCase()
             .includes(filter.toLowerCase())
           // ).map(usuario => <Card user={usuario} />)
-        ).map(usuario => <Card user={usuario} />)
+        ).map(usuario => <Card key={usuario.id} user={usuario} del={handleDelete} />)
       return (<>
         <span className="span_result">{res.length} resultados encontrados</span>
         {res}
       </>)
     }
     else {
-      return users.map(usuario => <Card user={usuario} />)
+      return users.map(usuario => <Card key={usuario.id} user={usuario} del={handleDelete} />)
     }
   }
 

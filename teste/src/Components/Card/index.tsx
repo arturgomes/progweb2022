@@ -4,14 +4,16 @@ import './styles.css'
 
 interface CardInterface {
   user: any;
+  del: (id: string) => void;
 }
-const Card: React.FC = ({ user }: CardInterface) => {
+const Card: React.FC = ({ user, del }: CardInterface) => {
   return (
     <>
       <div className="card">
         <div className="card_left">
           <div className="card_title">{user.name}</div>
           <div className="card_subtitle">{user.email}</div>
+          <button className="delete" onClick={() => del(user.id)}>delete</button>
         </div>
         <div className="card_right">
           <div className="address_container">

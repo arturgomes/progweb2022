@@ -49,3 +49,8 @@
   font-weight: 500;
   line-height: 30px;
 }
+
+.delete{
+  background-color: #fff;
+  color: #2A265F;
+}
