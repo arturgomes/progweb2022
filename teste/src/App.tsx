@@ -1,26 +1,19 @@
-import { useState } from 'react'
 import './App.css'
-import Card from './Components/Card'
-import CardList from './Components/CardList'
-// yarn add axios
-const usuario = {
-  name: "Artur",
-  email: "artur.gomes@ufms.br",
-  address: {
-    street: "Rua Rio Branco, ...",
-    suite: "CPAN",
-    city: "Corumbá"
-
-  },
-  phone: "12345"
-}
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Display from './view/Display'
+import Search from './view/Search'
+import About from './view/About'
 function App() {
 
   return (
-    <>
-      {/* <Card user={usuario} /> */}
-      <CardList />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Display />} />
+        <Route path='/buscar' element={<Search />} />
+        <Route path='/listar' element={<Display />} />
+        <Route path='/sobre' element={<About />} />
+      </Routes>
+    </Router>
   )
 }
 // yarn add react-icons
