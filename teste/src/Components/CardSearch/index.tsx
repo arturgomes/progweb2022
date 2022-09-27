@@ -4,7 +4,7 @@ import Card from '../Card';
 import IconBusca from '../../assets/icon-busca.png'
 import './styles.css';
 
-const CardList: React.FC = () => {
+const CardSearch: React.FC = () => {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('')
@@ -47,19 +47,24 @@ const CardList: React.FC = () => {
         {res}
       </>)
     }
-    else {
-      return users.map(usuario => <Card key={usuario.id} user={usuario} del={handleDelete} />)
-    }
+
   }
 
   if (loading) {
     return <div>Carregando..</div>
   } else {
     return (<div className="card_list_container">
-
-      {users.map(usuario => <Card key={usuario.id} user={usuario} del={handleDelete} />)}
+      <div className="search_bar">
+        <input
+          type="text"
+          value={filter}
+          onChange={handleSearchText}
+          placeholder="Buscar usuário..." />
+        <img src={IconBusca} alt="Busca" />
+      </div>
+      {displayContact()}
     </div>);
   }
 }
 
-export default CardList;
+export default CardSearch;
