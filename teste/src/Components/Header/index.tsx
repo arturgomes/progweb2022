@@ -14,6 +14,7 @@ const Header = (props: HeaderProps) => {
           <li><Link to="/">Listar</Link></li>
           <li><Link to="/buscar">Buscar</Link></li>
           <li><Link to="/sobre">Sobre</Link></li>
+          <li><Link to="/novo">Novo</Link></li>
         </ul>
       </header>
       <h1>{props.title}</h1>

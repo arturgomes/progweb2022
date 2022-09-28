@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Display from './view/Display'
 import Search from './view/Search'
 import About from './view/About'
+import New from './view/New'
 function App() {
 
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path='/buscar' element={<Search />} />
         <Route path='/listar' element={<Display />} />
         <Route path='/sobre' element={<About />} />
+        <Route path='/novo' element={<New />} />
       </Routes>
     </Router>
   )

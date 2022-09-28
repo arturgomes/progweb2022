@@ -1,0 +1,11 @@
+.form{
+  padding-top: 0.75rem/* 12px */;
+  padding-bottom: 0.75rem/* 12px */;
+  padding-left: 1rem/* 16px */;
+  padding-right: 1rem/* 16px */;
+  border-radius: 0.25rem/* 4px */;
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+  --tw-text-opacity: 1;
+  color: rgb(113 113 122 / var(--tw-text-opacity));
+}
